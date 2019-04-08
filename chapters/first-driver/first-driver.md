@@ -135,8 +135,33 @@ printk(KERN_INFO "Linux Device Driver Hello World");
 
 This is the complete code for our simple device driver (hello-world-module.c). You can access this code in subdirectory 'src'. Once we have the C code, it is time to compile it and create the module file hello-world-module.ko. Creating a Makefile for your module is straightforward. With the C code (hello-world-module.c) and Makefile ready, all we need to do is invoke make to build our first driver (hello-world-module.ko).
 
-In Terminal you need to enter sudo make like below video.
+In Terminal you need to enter make like below video.
 
 [![asciicast](https://asciinema.org/a/T4FG5THwcMFRy7SGIeafbPACi.png)](https://asciinema.org/a/T4FG5THwcMFRy7SGIeafbPACi)
+
+### Loading, Unloading and Listing the Device driver ###
+To load a Kernel Module, use the insmod command with root privileges. For example our module file name is hello_world_module.ko:
+
+```sh
+sudo insmod hello_world_module.ko
+```
+
+lsmod used to see the modules were inserted. In below image, i’ve shown the prints in init function. Use dmesg to see the kernel prints:
+```sh 
+lsmod hello_world_module.ko
+```
+
+To unload a Kernel Module, use the rmmod command with root privileges:
+```sh
+sudo rmmod hello_world_module
+```
+
+In order to get information about a Module (author, supported options), we may use the modinfo command:
+```sh
+modinfo hello_world_module.ko
+```
+
+Now we know where to start to write the Linux device driver.
+
 
 
