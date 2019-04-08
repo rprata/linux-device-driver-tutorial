@@ -130,3 +130,13 @@ printk(KERN_INFO "Linux Device Driver Hello World");
 ### Difference between printf and printk ###
 * printk() is a kernel level function, which has the ability to print out to different loglevels. We can see the prints using dmesg command.
 * printf() will always print to a file descriptor – STD_OUT. We can see the prints in STD_OUT console.
+
+## Simple Driver ##
+
+This is the complete code for our simple device driver (hello-world-module.c). You can access this code in subdirectory 'src'. Once we have the C code, it is time to compile it and create the module file hello-world-module.ko. Creating a Makefile for your module is straightforward. With the C code (hello-world-module.c) and Makefile ready, all we need to do is invoke make to build our first driver (hello-world-module.ko).
+
+In Terminal you need to enter sudo make like below video.
+
+[![asciicast](https://asciinema.org/a/T4FG5THwcMFRy7SGIeafbPACi.png)](https://asciinema.org/a/T4FG5THwcMFRy7SGIeafbPACi)
+
+
