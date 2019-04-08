@@ -11,7 +11,7 @@ Linux is primarily divided into User Space & Kernel Space. These two components 
 ### Kernel Space ###
 Kernel space is where the kernel (i.e., the core of the operating system) executes (i.e., runs) and provides its services.
 
-### User Space ## #
+### User Space ###
 User Space is where the user applications are executed.
 
 ## Linux Kernel Modules ##
