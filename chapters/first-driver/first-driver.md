@@ -46,7 +46,7 @@ Using this Macro we can mention that who is wrote this driver or module. So modi
 MODULE_AUTHOR("Renan Prata");
 ```
 
-*Note: Use “Name <email>” or just “Name”, for multiple authors use multiple MODULE_AUTHOR() statements/lines.*
+*Note: Use “Name *email*” or just “Name”, for multiple authors use multiple MODULE_AUTHOR() statements/lines.*
 
 ### Module Description ###
 Using this Macro we can give the description of the module or driver. So modinfo can show module description for users wanting to know. We can give the description for our driver (module) like below. For this you need to include the linux/module.h header file.
@@ -58,13 +58,13 @@ MODULE_DESCRIPTION("A sample driver");
 ### Module Version ###
 Using this Macro we can give the version of the module or driver. So modinfo can show module version for users wanting to know.
 
-* *Version of form [<epoch>:]<version>[-<extra-version>].*
+* *Version of form [**epoch>**]**version**[-**extra-version**].*
 
-* *<epoch>: A (small) unsigned integer which allows you to start versions anew. If not mentioned, it’s zero. eg. “2:1.0” is after “1:2.0”.*
+* * **epoch**: A (small) unsigned integer which allows you to start versions anew. If not mentioned, it’s zero. eg. “2:1.0” is after “1:2.0”.*
 
-* *<version>: The <version> may contain only alphanumerics and the character `.’. Ordered by numeric sort for numeric parts, ascii sort for ascii parts (as per RPM or DEB algorithm).*
+* * **version**: The **version** may contain only alphanumerics and the character `.’. Ordered by numeric sort for numeric parts, ascii sort for ascii parts (as per RPM or DEB algorithm).*
 
-* *<extraversion>: Like <version>, but inserted for local customizations, eg “rh3” or “rusty1”.*
+* * **extraversion**: Like **version**, but inserted for local customizations, eg “rh3” or “rusty1”.*
 
 ```C
 MODULE_VERSION("1:1.0");
