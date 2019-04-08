@@ -142,23 +142,23 @@ In Terminal you need to enter make like below video.
 ### Loading, Unloading and Listing the Device driver ###
 To load a Kernel Module, use the insmod command with root privileges. For example our module file name is hello_world_module.ko:
 
-```sh
-sudo insmod hello_world_module.ko
+```bash
+$ sudo insmod hello_world_module.ko
 ```
 
 lsmod used to see the modules were inserted. In below image, i’ve shown the prints in init function. Use dmesg to see the kernel prints:
-```sh 
-lsmod hello_world_module.ko
+```bash 
+$ lsmod hello_world_module.ko
 ```
 
 To unload a Kernel Module, use the rmmod command with root privileges:
-```sh
-sudo rmmod hello_world_module
+```bash
+$ sudo rmmod hello_world_module
 ```
 
 In order to get information about a Module (author, supported options), we may use the modinfo command:
-```sh
-modinfo hello_world_module.ko
+```bash
+$ modinfo hello_world_module.ko
 ```
 
 Now we know where to start to write the Linux device driver.
