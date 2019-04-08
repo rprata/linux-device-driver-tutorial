@@ -6,7 +6,7 @@ Linux is a free open source operating system (OS) based on UNIX that was created
 
 Linux is primarily divided into User Space & Kernel Space. These two components interact through a System Call Interface – which are predefined and matured interface to Linux Kernel for User space applications. The below image will give you the basic understanding.
 
-![Kernel Space vs User Space](../imgs/kernel-space-vs-user-space.png)
+![Kernel Space vs User Space](./imgs/kernel-space-vs-user-space.png)
 
 ### Kernel Space ###
 Kernel space is where the kernel (i.e., the core of the operating system) executes (i.e., runs) and provides its services.
@@ -86,6 +86,6 @@ A block file is a hardware file which read/write data in blocks instead of chara
 ### Network Device ###
 A network device is, so far as Linux’s network subsystem is concerned, an entity that sends and receives packets of data. This is normally a physical device such as an ethernet card. Some network devices though are software only such as the loopback device which is used for sending data to yourself.
 
-*This is all about the basics of Linux and device driver. Now we will create our first driver.*
+**This is all about the basics of Linux and device driver. Now we will create our first driver.**
 
 
