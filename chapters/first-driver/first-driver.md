@@ -15,17 +15,17 @@ These all informations are present in the linux/module.h as a macros.
 
 The following license idents are currently accepted as indicating free software modules:
 
-*[GPL](https://opensource.org/licenses/gpl-license)
+* [GPL](https://opensource.org/licenses/gpl-license)
 
-*[LGPL](https://opensource.org/licenses/lgpl-license)
+* [LGPL](https://opensource.org/licenses/lgpl-license)
 
-*[BSD-2-Clause](https://opensource.org/licenses/BSD-3-Clause)
+* [BSD-2-Clause](https://opensource.org/licenses/BSD-3-Clause)
 
-*[MIT](https://opensource.org/licenses/MIT)
+* [MIT](https://opensource.org/licenses/MIT)
 
-*[Apache-2.0](https://opensource.org/licenses/Apache-2.0)
+* [Apache-2.0](https://opensource.org/licenses/Apache-2.0)
 
-*[MPL-2.0](https://opensource.org/licenses/MPL-2.0)
+* [MPL-2.0](https://opensource.org/licenses/MPL-2.0)
 
 This exists for several reasons:
 
@@ -58,13 +58,13 @@ MODULE_DESCRIPTION("A sample driver");
 ### Module Version ###
 Using this Macro we can give the version of the module or driver. So modinfo can show module version for users wanting to know.
 
-* *Version of form [**epoch>**]**version**[-**extra-version**].*
+* Version of form [**epoch>**]**version**[-**extra-version**].
 
-* * **epoch**: A (small) unsigned integer which allows you to start versions anew. If not mentioned, it’s zero. eg. “2:1.0” is after “1:2.0”.*
+* **epoch**: A (small) unsigned integer which allows you to start versions anew. If not mentioned, it’s zero. eg. “2:1.0” is after “1:2.0”.
 
-* * **version**: The **version** may contain only alphanumerics and the character `.’. Ordered by numeric sort for numeric parts, ascii sort for ascii parts (as per RPM or DEB algorithm).*
+* **version**: The **version** may contain only alphanumerics and the character `.’. Ordered by numeric sort for numeric parts, ascii sort for ascii parts (as per RPM or DEB algorithm).
 
-* * **extraversion**: Like **version**, but inserted for local customizations, eg “rh3” or “rusty1”.*
+* **extraversion**: Like **version**, but inserted for local customizations, eg “rh3” or “rusty1”.
 
 ```C
 MODULE_VERSION("1:1.0");
