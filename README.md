@@ -1,7 +1,7 @@
 # Linux Device Driver Tutorial #
 
 ## What is it? ##
-This tutorial discusses technical issues to develop your own linux device driver. The work is divided into chapters that starts in a simple way and gradually covers more issues related to the development of Linux kernel modules.
+This tutorial discusses technical issues to develop your own linux device driver. The aim of this tutorial is to provide, easy and practical examples so that everybody can understand the concepts in a simple manner. The work is divided into chapters that starts in a simple way and gradually covers more issues related to the development of Linux kernel modules.
 
 ## Who is this tutorial for? ##
 People interested in understanding more about how the Linux kernel works and developing kernel modules.
