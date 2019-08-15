@@ -7,11 +7,11 @@ This tutorial discusses technical issues to develop your own linux device driver
 People interested in understanding more about how the Linux kernel works and developing kernel modules.
 
 ## Requirements ##
-* A computer or Virtual Machine running a linux distro (we recommend [Ubuntu <3](https://www.ubuntu.com))
-* [GCC](https://gcc.gnu.org)
-* A text editor. [vim](https://www.vim.org/), [emacs](https://www.gnu.org/s/emacs/), [sublime text](https://www.sublimetext.com)
-* Basic knowledge of linux (you need to know how to use linux command line)
-* Basic knowledge of C
+* A computer or Virtual Machine running a linux distro (we recommend [Ubuntu <3](https://www.ubuntu.com));
+* [GCC](https://gcc.gnu.org);
+* A text editor. [vim](https://www.vim.org/), [emacs](https://www.gnu.org/s/emacs/), [sublime text](https://www.sublimetext.com);
+* Basic knowledge of linux (you need to know how to use linux command line);
+* Basic knowledge of C;
 
 ## Chapters ##
 1. [Introduction](chapters/introduction/introduction.md)
