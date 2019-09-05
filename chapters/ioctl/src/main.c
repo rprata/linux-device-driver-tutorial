@@ -7,8 +7,12 @@
 #include <linux/device.h>
 #include <linux/slab.h>
 #include <linux/uaccess.h>
+#include <linux/ioctl.h>
 
-#define mem_size        1024
+#define WR_VALUE _IOW('a','a',int32_t*)
+#define RD_VALUE _IOR('a','b',int32_t*)
+
+int32_t value = 0;
 
 dev_t dev = 0;
 static struct class *dev_class;
@@ -22,6 +26,7 @@ static int main_open(struct inode *inode, struct file *file);
 static int main_release(struct inode *inode, struct file *file);
 static ssize_t main_read(struct file *filp, char __user *buf, size_t len,loff_t * off);
 static ssize_t main_write(struct file *filp, const char *buf, size_t len, loff_t * off);
+static long main_ioctl(struct file *file, unsigned int cmd, unsigned long arg);
 
 static struct file_operations fops =
 {
@@ -29,6 +34,7 @@ static struct file_operations fops =
 .read           = main_read,
 .write          = main_write,
 .open           = main_open,
+.unlocked_ioctl = main_ioctl,
 .release        = main_release,
 };
 
@@ -36,33 +42,37 @@ static int main_open(struct inode *inode, struct file *file)
 {
     printk(KERN_INFO "Driver Open Function Called...!!!\n");
 
-    if((kernel_buffer = kmalloc(mem_size , GFP_KERNEL)) == 0) 
-    {
-    	printk(KERN_INFO "Cannot allocate memory in kernel\n");
-        return -1;
-    }
     return 0;
 }
 
 static int main_release(struct inode *inode, struct file *file)
 {
     printk(KERN_INFO "Driver Release Function Called...!!!\n");
-    if (kernel_buffer) 
-    {
-    	kfree(kernel_buffer);
-    }
     return 0;
+}
+
+static long main_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
+{
+         switch(cmd) {
+                case WR_VALUE:
+                        copy_from_user(&value ,(int32_t*) arg, sizeof(value));
+                        printk(KERN_INFO "Value = %d\n", value);
+                        break;
+                case RD_VALUE:
+                        copy_to_user((int32_t*) arg, &value, sizeof(value));
+                        break;
+        }
+        return 0;
 }
 
 static ssize_t main_read(struct file *filp, char __user *buf, size_t len, loff_t *off)
 {
     printk(KERN_INFO "Driver Read Function Called...!!!\n");
-    copy_to_user(buf, kernel_buffer, mem_size);
     return 0;
 }
+
 static ssize_t main_write(struct file *filp, const char __user *buf, size_t len, loff_t *off)
 {	
-	copy_from_user(kernel_buffer, buf, len);
     printk(KERN_INFO "Driver Write Function Called []...!!!\n");
     return len;
 }
@@ -118,4 +128,4 @@ module_exit(main_exit);
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Renan Prata <renancprata@gmail.com>");
 MODULE_DESCRIPTION("A simple hello world driver");
-MODULE_VERSION("1:2");
+MODULE_VERSION("1:3");
