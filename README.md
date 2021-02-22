@@ -16,6 +16,7 @@ People interested in understanding more about how the Linux kernel works and dev
 ## Chapters ##
 1. [Introduction](chapters/introduction/introduction.md)
 2. [First Driver](chapters/first-driver/first-driver.md)
+3. [Passing Arguments to Device Driver](chapters/module-parameter/module-parameter.md)
 
 ## License ##
 Linux Device Driver Tutorial may be modified and distributed under the terms of the MIT license. See the LICENSE file for details.
